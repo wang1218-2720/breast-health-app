@@ -254,7 +254,7 @@ export default function Knowledge() {
   }, [expertArticle])
 
   return (
-    <div className="min-h-screen bg-[#FDF2F4] p-6 md:p-8">
+    <div className="min-h-screen bg-[#FDF2F4] p-4 md:p-6 lg:p-8 pb-24 md:pb-8">
       <div className="max-w-5xl mx-auto">
         <header className="mb-6">
           <h1 className="text-xl md:text-2xl font-bold text-gray-700 flex items-center gap-2">
@@ -266,11 +266,11 @@ export default function Knowledge() {
         </header>
 
         {/* 标签页切换 */}
-        <div className="flex gap-2 mb-6 border-b border-[#FCE7E9]">
+        <div className="flex gap-2 mb-4 md:mb-6 border-b border-[#FCE7E9]">
           <button
             type="button"
             onClick={() => setActiveTab('diet')}
-            className={`px-4 md:px-6 py-3 font-medium rounded-t-lg transition ${
+            className={`min-h-[44px] px-4 md:px-6 py-3 font-medium rounded-t-lg transition select-none active:opacity-90 ${
               activeTab === 'diet'
                 ? 'bg-white text-[#F472B6] border-b-2 border-[#F472B6] -mb-px'
                 : 'text-gray-500 hover:text-[#F472B6]'
@@ -281,7 +281,7 @@ export default function Knowledge() {
           <button
             type="button"
             onClick={() => setActiveTab('exercise')}
-            className={`px-4 md:px-6 py-3 font-medium rounded-t-lg transition ${
+            className={`min-h-[44px] px-4 md:px-6 py-3 font-medium rounded-t-lg transition select-none active:opacity-90 ${
               activeTab === 'exercise'
                 ? 'bg-white text-[#F472B6] border-b-2 border-[#F472B6] -mb-px'
                 : 'text-gray-500 hover:text-[#F472B6]'
@@ -292,7 +292,7 @@ export default function Knowledge() {
           <button
             type="button"
             onClick={() => setActiveTab('expert')}
-            className={`px-4 md:px-6 py-3 font-medium rounded-t-lg transition ${
+            className={`min-h-[44px] px-4 md:px-6 py-3 font-medium rounded-t-lg transition select-none active:opacity-90 ${
               activeTab === 'expert'
                 ? 'bg-white text-[#F472B6] border-b-2 border-[#F472B6] -mb-px'
                 : 'text-gray-500 hover:text-[#F472B6]'

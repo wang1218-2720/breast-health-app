@@ -701,15 +701,15 @@ export default function Reports() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FDF2F4] p-6 md:p-8 print:bg-white print:p-0">
-      <div className="max-w-5xl mx-auto space-y-6 print:max-w-none print:shadow-none print:space-y-4">
+    <div className="min-h-screen bg-[#FDF2F4] p-4 md:p-6 lg:p-8 print:bg-white print:p-0">
+      <div className="max-w-5xl mx-auto space-y-4 md:space-y-6 print:max-w-none print:shadow-none print:space-y-4">
         {/* 时间范围选择 */}
-        <div className="flex flex-wrap items-center justify-between gap-4 print:hidden">
-          <h1 className="text-xl md:text-2xl font-bold text-gray-700">健康报告</h1>
+        <div className="flex flex-wrap items-center justify-between gap-3 md:gap-4 print:hidden">
+          <h1 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-700">健康报告</h1>
           <select
             value={timeRange}
             onChange={(e) => setTimeRange(e.target.value as TimeRangeKey)}
-            className="px-4 py-2 rounded-xl border border-[#FCE7E9] bg-white text-gray-700 text-sm focus:ring-2 focus:ring-[#FCE7E9] focus:border-[#F472B6] outline-none"
+            className="min-h-[44px] px-4 py-2 rounded-xl border border-[#FCE7E9] bg-white text-gray-700 text-sm focus:ring-2 focus:ring-[#FCE7E9] focus:border-[#F472B6] outline-none select-none"
           >
             {TIME_RANGE_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>{opt.label}</option>

@@ -2,9 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 移动端安全区域（刘海/底部横条） */
-.pb-safe {
-  padding-bottom: env(safe-area-inset-bottom, 0);
+/* 全局：平滑滚动、安全区域、移动端友好 */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  /* 移动端安全区域（刘海/底部横条） */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  /* 图片默认响应式 */
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 }
 
 /* 疼痛程度滑动条 - WebKit */

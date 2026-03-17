@@ -69,14 +69,15 @@ const Login = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 pb-safe" style={{ backgroundImage: 'url(/landing-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8 pb-safe" style={{ backgroundImage: 'url(/landing-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="absolute inset-0 bg-white/30"></div>
       <div className="w-full max-w-sm relative">
-        <div className="flex flex-col items-center mb-8 gap-3">
+        <div className="flex flex-col items-center mb-6 md:mb-8 gap-3">
           <img
             src="/logo.png"
             alt="舒汝日记"
-            className="h-16 w-16 object-contain rounded-full bg-white p-1.5"
+            className="h-14 w-14 md:h-16 md:w-16 object-contain rounded-full bg-white p-1.5 max-w-full"
+            loading="lazy"
           />
           <span className="text-xl font-bold text-pink-600">舒汝日记</span>
         </div>

@@ -72,11 +72,11 @@ const Profile = () => {
   }
 
   return (
-    <div className="px-4 pt-4 pb-6">
-      <h1 className="text-xl font-bold text-gray-800 mb-6">个人中心</h1>
+    <div className="px-4 md:px-6 pt-4 pb-24 md:pb-6">
+      <h1 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">个人中心</h1>
 
       <section
-        className="bg-cover bg-center bg-no-repeat rounded-2xl p-4 shadow-sm border border-pink-100 mb-6"
+        className="bg-cover bg-center bg-no-repeat rounded-xl md:rounded-2xl p-3 md:p-4 shadow-sm border border-pink-100 mb-4 md:mb-6"
         style={{
           backgroundImage:
             "linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)), url('/knowledge-card-bg.png')",

@@ -597,13 +597,13 @@ export default function DailyLog() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FDF2F4] p-6 pb-20">
-      <header className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-700">每日记录</h1>
-        <p className="text-gray-600 mt-1">记录每日心情、疼痛与饮食，便于追踪健康趋势</p>
+    <div className="min-h-screen bg-[#FDF2F4] p-4 md:p-6 pb-24 md:pb-20">
+      <header className="mb-4 md:mb-6">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-700">每日记录</h1>
+        <p className="text-gray-600 mt-1 text-sm md:text-base leading-relaxed">记录每日心情、疼痛与饮食，便于追踪健康趋势</p>
       </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4">
         {/* 1. 日历视图（左侧，占两行高度） */}
         <div className="lg:row-span-2">
         <CollapsibleCard title="日历" defaultOpen keepCalendarBg>
@@ -1160,11 +1160,11 @@ export default function DailyLog() {
       </div>
 
       {/* 7. 提交与删除按钮 */}
-      <div className="mt-6 flex flex-wrap items-center gap-3">
+      <div className="mt-4 md:mt-6 flex flex-wrap items-center gap-3">
         <button
           type="button"
           onClick={handleSave}
-          className="flex-1 min-w-[140px] py-3.5 rounded-2xl bg-[#F472B6] text-white font-medium shadow-lg shadow-pink-200/50 hover:bg-[#FBC4D0] active:scale-[0.99] transition"
+          className="flex-1 min-w-[140px] min-h-[44px] py-3.5 rounded-2xl bg-[#F472B6] text-white text-sm md:text-base font-medium shadow-lg shadow-pink-200/50 hover:bg-[#FBC4D0] active:scale-[0.99] transition select-none"
         >
           保存今日记录
         </button>
@@ -1172,17 +1172,17 @@ export default function DailyLog() {
           <button
             type="button"
             onClick={handleDeleteRecord}
-            className="flex-1 min-w-[140px] py-3.5 rounded-2xl border-2 border-red-300 text-red-600 font-medium hover:bg-red-50 active:scale-[0.99] transition"
+            className="flex-1 min-w-[140px] min-h-[44px] py-3.5 rounded-2xl border-2 border-red-300 text-red-600 text-sm md:text-base font-medium hover:bg-red-50 active:scale-[0.99] transition select-none"
           >
             删除该日记录
           </button>
         )}
       </div>
 
-      {/* Toast */}
+      {/* Toast：移动端显示在底部导航上方 */}
       {showToast && (
         <div
-          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-xl bg-gray-800/90 text-white text-sm shadow-lg"
+          className="fixed bottom-20 md:bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-xl bg-gray-800/90 text-white text-sm shadow-lg"
           role="status"
           aria-live="polite"
         >

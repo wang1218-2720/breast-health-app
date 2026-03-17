@@ -9,14 +9,15 @@ export default function Landing() {
     <div className="min-h-screen bg-white font-sans antialiased relative" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
       {/* ========== 导航栏 ========== */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[#FCE7E9]">
-        <div className="max-w-[1200px] mx-auto px-5 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-5 py-3 md:py-4 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-2 md:gap-3 min-h-[44px] items-center">
             <img
               src="/logo.png"
               alt="舒汝日记"
-              className="h-12 w-12 object-contain rounded-full bg-white p-1"
+              className="h-10 w-10 md:h-12 md:w-12 object-contain rounded-full bg-white p-1 max-w-full"
+              loading="lazy"
             />
-            <span className="text-2xl font-bold text-[#F472B6]">舒汝日记</span>
+            <span className="text-xl md:text-2xl font-bold text-[#F472B6]">舒汝日记</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-[#4A5568] text-sm font-medium">
             <a href="#features" className="hover:text-[#F472B6] transition">首页</a>
@@ -24,16 +25,16 @@ export default function Landing() {
             <a href="#how" className="hover:text-[#F472B6] transition">我们的工作</a>
             <a href="#contact" className="hover:text-[#F472B6] transition">联系我们</a>
           </nav>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <Link
               to="/login"
-              className="px-4 py-2 rounded-2xl border-2 border-[#F472B6] text-[#F472B6] text-sm font-medium hover:bg-[#FDF2F4] transition"
+              className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-4 py-2 rounded-2xl border-2 border-[#F472B6] text-[#F472B6] text-sm font-medium hover:bg-[#FDF2F4] active:scale-95 transition select-none"
             >
               登录
             </Link>
             <Link
               to="/login"
-              className="px-4 py-2 rounded-2xl bg-[#F472B6] text-white text-sm font-medium hover:bg-[#EC4899] transition shadow-md shadow-pink-200/50"
+              className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-4 py-2 rounded-2xl bg-[#F472B6] text-white text-sm font-medium hover:bg-[#EC4899] active:scale-95 transition shadow-md shadow-pink-200/50 select-none"
             >
               注册
             </Link>
@@ -43,25 +44,25 @@ export default function Landing() {
 
       <main>
         {/* ========== Hero 区 ========== */}
-        <section className="relative max-w-[1200px] mx-auto px-5 py-16 md:py-24 overflow-hidden" style={{ backgroundImage: 'url(/landing-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <section className="relative max-w-[1200px] mx-auto px-4 md:px-5 py-12 md:py-16 lg:py-24 overflow-hidden" style={{ backgroundImage: 'url(/landing-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="absolute inset-0 bg-white/70"></div>
           <div className="relative z-10 max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#2D3748] leading-tight">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#2D3748] leading-tight">
               温柔呵护 · 科学记录
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-[#4A5568] leading-relaxed max-w-xl">
+            <p className="mt-4 md:mt-6 text-sm md:text-lg lg:text-xl text-[#4A5568] leading-relaxed max-w-xl">
               专为乳房健康设计的智能日记，让每一份记录都成为呵护自己的礼物
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-6 md:mt-10 flex flex-wrap gap-3 md:gap-4">
               <Link
                 to="/login"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-[28px] bg-[#F472B6] text-white font-semibold text-base hover:bg-[#EC4899] transition shadow-lg shadow-pink-200/40"
+                className="min-h-[44px] inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 rounded-[28px] bg-[#F472B6] text-white text-sm md:text-base font-semibold hover:bg-[#EC4899] active:scale-95 transition shadow-lg shadow-pink-200/40 select-none"
               >
                 开始记录
               </Link>
               <a
                 href="#features"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-[28px] border-2 border-[#F472B6] text-[#F472B6] font-semibold text-base hover:bg-[#FDF2F4] transition"
+                className="min-h-[44px] inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 rounded-[28px] border-2 border-[#F472B6] text-[#F472B6] text-sm md:text-base font-semibold hover:bg-[#FDF2F4] active:scale-95 transition select-none scroll-smooth"
               >
                 了解更多
               </a>
@@ -70,16 +71,16 @@ export default function Landing() {
         </section>
 
         {/* ========== 功能亮点区 ========== */}
-        <section id="features" className="bg-[#FFF9F9] py-16 md:py-20">
-          <div className="max-w-[1200px] mx-auto px-5">
-            <h2 className="text-3xl font-bold text-[#2D3748] text-center mb-4">如何帮助您</h2>
-            <p className="text-[#718096] text-center max-w-xl mx-auto mb-12">
+        <section id="features" className="bg-[#FFF9F9] py-12 md:py-16 lg:py-20">
+          <div className="max-w-[1200px] mx-auto px-4 md:px-5">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#2D3748] text-center mb-3 md:mb-4">如何帮助您</h2>
+            <p className="text-sm md:text-base text-[#718096] text-center max-w-xl mx-auto mb-8 md:mb-12 leading-relaxed">
               智能记录与专业报告，让健康管理更简单
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {/* 卡片1 */}
               <div
-                className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-[24px] p-8 shadow-lg shadow-pink-100/30 border border-[#FFE8F0] hover:shadow-xl transition-all"
+                className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl md:rounded-[24px] p-5 md:p-8 shadow-md md:shadow-lg shadow-pink-100/30 border border-[#FFE8F0] hover:shadow-xl transition-all"
                 style={{ backgroundImage: "url('/dashboard-card-bg.png')" }}
               >
                 <div className="text-4xl mb-4">📝</div>

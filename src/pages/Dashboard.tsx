@@ -276,11 +276,11 @@ export default function Dashboard() {
   )
 
   return (
-    <div className="min-h-screen bg-[#FDF2F4] p-6 md:p-8">
-      <div className="max-w-6xl mx-auto space-y-6">
+    <div className="min-h-screen bg-[#FDF2F4] p-4 md:p-6 lg:p-8">
+      <div className="max-w-6xl mx-auto space-y-4 md:space-y-6">
         {/* 模块0：每日AI提醒 */}
         {dailyReminder && (
-          <div className="relative h-20 sm:h-24 rounded-2xl overflow-hidden border border-[#FCE7E9] shadow-sm bg-[#FDF2F4]">
+          <div className="relative h-20 sm:h-24 rounded-xl md:rounded-2xl overflow-hidden border border-[#FCE7E9] shadow-sm bg-[#FDF2F4]">
             {/* 右侧完整显示背景图 */}
             <div
               className="absolute inset-y-0 right-0 w-2/5 sm:w-1/3"
@@ -305,14 +305,14 @@ export default function Dashboard() {
 
         {/* 模块1：欢迎语和快捷入口 */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <p className="text-gray-700 text-lg">
+          <p className="text-gray-700 text-sm md:text-base lg:text-lg leading-relaxed">
             👋 {greeting}，{USER_NICKNAME}！今天感觉怎么样？
           </p>
           <Link
             to="/app/daily-log"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-[#F472B6] text-white font-medium hover:bg-[#FBC4D0] transition shrink-0"
+            className="inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-5 py-2.5 rounded-xl bg-[#F472B6] text-white text-sm md:text-base font-medium hover:bg-[#FBC4D0] active:scale-95 transition select-none shrink-0"
           >
-            +每日记录
+            + 每日记录
           </Link>
         </div>
 
@@ -337,10 +337,10 @@ export default function Dashboard() {
 
         {/* 模块3：过去7天疼痛趋势图 */}
         <section
-          className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg shadow-pink-100/50 border border-[#FCE7E9] p-6"
+          className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl md:rounded-2xl shadow-md md:shadow-lg shadow-pink-100/50 border border-[#FCE7E9] p-4 md:p-6"
           style={{ backgroundImage: "url('/dashboard-card-bg.png')" }}
         >
-          <h2 className="text-base font-semibold text-gray-700 mb-4">📈 过去7天疼痛趋势</h2>
+          <h2 className="text-sm md:text-base font-semibold text-gray-700 mb-3 md:mb-4">📈 过去7天疼痛趋势</h2>
           {hasAnyData ? (
             <div className="h-[200px] w-full">
               <Line data={chartData} options={chartOptions} />
@@ -353,9 +353,9 @@ export default function Dashboard() {
         </section>
 
         {/* 模块4：关键指标卡片 */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           <div
-            className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl p-4 shadow-sm border border-[#FCE7E9]"
+            className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl p-3 md:p-4 shadow-sm border border-[#FCE7E9]"
             style={{ backgroundImage: "url('/dashboard-card-bg.png')" }}
           >
             <p className="text-sm text-gray-500">平均疼痛</p>
@@ -366,11 +366,11 @@ export default function Dashboard() {
             <p className="text-xs text-gray-400 mt-1">最近7天</p>
           </div>
           <div
-            className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl p-4 shadow-sm border border-[#FCE7E9]"
+            className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl p-3 md:p-4 shadow-sm border border-[#FCE7E9]"
             style={{ backgroundImage: "url('/dashboard-card-bg.png')" }}
           >
-            <p className="text-sm text-gray-500">最高疼痛</p>
-            <p className="text-2xl md:text-3xl font-bold text-orange-500">
+            <p className="text-xs md:text-sm text-gray-500">最高疼痛</p>
+            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-orange-500">
               {maxPain}
               <span className="text-sm text-gray-400 ml-1">分</span>
             </p>
@@ -388,11 +388,11 @@ export default function Dashboard() {
             <p className="text-xs text-gray-400 mt-1">最近7天中</p>
           </div>
           <div
-            className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl p-4 shadow-sm border border-[#FCE7E9]"
+            className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl p-3 md:p-4 shadow-sm border border-[#FCE7E9]"
             style={{ backgroundImage: "url('/dashboard-card-bg.png')" }}
           >
-            <p className="text-sm text-gray-500">记录完整度</p>
-            <p className="text-2xl md:text-3xl font-bold text-purple-500">
+            <p className="text-xs md:text-sm text-gray-500">记录完整度</p>
+            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-purple-500">
               {completeness}%
             </p>
             <p className="text-xs text-gray-400 mt-1">{validDays}/7 天有记录</p>
@@ -400,41 +400,41 @@ export default function Dashboard() {
         </div>
 
         {/* 模块5：健康洞察总结 */}
-        <section className="bg-[#FDF2F4] rounded-2xl border border-[#FCE7E9] p-6">
-          <h2 className="text-base font-semibold text-gray-700 mb-2 flex items-center gap-2">
+        <section className="bg-[#FDF2F4] rounded-xl md:rounded-2xl border border-[#FCE7E9] p-4 md:p-6">
+          <h2 className="text-sm md:text-base font-semibold text-gray-700 mb-2 flex items-center gap-2">
             💡 健康洞察
           </h2>
-          <p className="text-gray-700 text-sm leading-relaxed">{insight}</p>
+          <p className="text-gray-700 text-sm md:text-base leading-relaxed md:leading-normal">{insight}</p>
         </section>
 
         {/* 模块6：快捷导航卡片 */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           <Link
-            to="/reports"
-            className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl p-5 shadow-sm border border-[#FCE7E9] hover:shadow-md hover:border-[#FBC4D0] transition flex flex-col gap-2"
+            to="/app/reports"
+            className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl p-4 md:p-5 shadow-sm border border-[#FCE7E9] hover:shadow-md hover:border-[#FBC4D0] active:scale-[0.98] transition flex flex-col gap-2 min-h-[44px] select-none"
             style={{ backgroundImage: "url('/dashboard-card-bg.png')" }}
           >
-            <span className="text-3xl">📊</span>
-            <h3 className="font-semibold text-gray-800">健康报告</h3>
-            <p className="text-sm text-gray-600">查看详细趋势和分析</p>
+            <span className="text-2xl md:text-3xl">📊</span>
+            <h3 className="font-semibold text-gray-800 text-sm md:text-base">健康报告</h3>
+            <p className="text-xs md:text-sm text-gray-600">查看详细趋势和分析</p>
           </Link>
           <Link
-            to="/knowledge"
-            className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl p-5 shadow-sm border border-[#FCE7E9] hover:shadow-md hover:border-[#FBC4D0] transition flex flex-col gap-2"
+            to="/app/knowledge"
+            className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl p-4 md:p-5 shadow-sm border border-[#FCE7E9] hover:shadow-md hover:border-[#FBC4D0] active:scale-[0.98] transition flex flex-col gap-2 min-h-[44px] select-none"
             style={{ backgroundImage: "url('/dashboard-card-bg.png')" }}
           >
-            <span className="text-3xl">📚</span>
-            <h3 className="font-semibold text-gray-800">知识科普</h3>
-            <p className="text-sm text-gray-600">饮食与运动建议</p>
+            <span className="text-2xl md:text-3xl">📚</span>
+            <h3 className="font-semibold text-gray-800 text-sm md:text-base">知识科普</h3>
+            <p className="text-xs md:text-sm text-gray-600">饮食与运动建议</p>
           </Link>
           <Link
-            to="/profile"
-            className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl p-5 shadow-sm border border-[#FCE7E9] hover:shadow-md hover:border-[#FBC4D0] transition flex flex-col gap-2"
+            to="/app/profile"
+            className="bg-white/90 bg-cover bg-center bg-no-repeat rounded-xl p-4 md:p-5 shadow-sm border border-[#FCE7E9] hover:shadow-md hover:border-[#FBC4D0] active:scale-[0.98] transition flex flex-col gap-2 min-h-[44px] select-none"
             style={{ backgroundImage: "url('/dashboard-card-bg.png')" }}
           >
-            <span className="text-3xl">👤</span>
-            <h3 className="font-semibold text-gray-800">个人中心</h3>
-            <p className="text-sm text-gray-600">管理您的信息</p>
+            <span className="text-2xl md:text-3xl">👤</span>
+            <h3 className="font-semibold text-gray-800 text-sm md:text-base">个人中心</h3>
+            <p className="text-xs md:text-sm text-gray-600">管理您的信息</p>
           </Link>
         </div>
       </div>
