@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback, type ReactNode } from 'react'
 import {
   format,
   startOfMonth,
@@ -247,7 +247,7 @@ function CollapsibleCard({ title, defaultOpen = true, keepCalendarBg = false, ch
   title: string
   defaultOpen?: boolean
   keepCalendarBg?: boolean
-  children: React.ReactNode
+  children: ReactNode
 }) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
   const style = keepCalendarBg

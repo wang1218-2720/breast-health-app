@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
+import { type PointerEvent as ReactPointerEvent } from 'react'
 import { chatWithLaibaoConversation, type LaibaoChatMessage } from '../services/deepseek'
 
 export default function LaibaoAssistant() {
@@ -12,7 +13,7 @@ export default function LaibaoAssistant() {
   const listRef = useRef<HTMLDivElement | null>(null)
 
   const handlePointerDown = useCallback(
-    (e: React.PointerEvent) => {
+    (e: ReactPointerEvent) => {
       setIsDragging(true)
       dragRef.current = {
         startX: e.clientX,
@@ -26,7 +27,7 @@ export default function LaibaoAssistant() {
   )
 
   const handlePointerMove = useCallback(
-    (e: React.PointerEvent) => {
+    (e: ReactPointerEvent) => {
       if (!isDragging) return
       const dx = e.clientX - dragRef.current.startX
       const dy = e.clientY - dragRef.current.startY
